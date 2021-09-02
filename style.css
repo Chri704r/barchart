@@ -1,0 +1,12 @@
+#bars {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+}
+
+.bar {
+	width: 15px;
+	height: 10px;
+	border: 1px solid green;
+	background-color: greenyellow;
+}
