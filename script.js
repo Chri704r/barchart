@@ -23,9 +23,11 @@ function getNumberOfCustumers() {
 }
 
 function displayData() {
-	for (let index = 0; index < model.length; index++) {
-		const element = model[index];
-		document.querySelector(`.bar:nth-child(${index + 1})`).style.height = element + "px";
+	//for every index number in the model, style each bar with same height as index value
+	for (let indexNumber = 0; indexNumber < model.length; indexNumber++) {
+		//create varibel that contains the current index number
+		const barHeight = model[indexNumber];
+		document.querySelector(`.bar:nth-child(${indexNumber + 1})`).style.height = barHeight + "px";
 		document.querySelector(".bar:nth-child(40)").style.height = getNumberOfCustumers() + "px";
 	}
 	modifyModel();
@@ -33,6 +35,7 @@ function displayData() {
 
 function modifyModel() {
 	const queueSize = getNumberOfCustumers();
+
 	model.shift();
 	model.push(queueSize);
 	console.log(model);
